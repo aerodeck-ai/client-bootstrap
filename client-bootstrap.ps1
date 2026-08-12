@@ -89,7 +89,7 @@ try {
 
 if ($needUp) {
     Say "Joining tailnet with pre-auth key (hostname=$Hostname)..."
-    & $TsExe up --authkey $AuthKey --unattended --hostname $Hostname --accept-routes=$false
+    & $TsExe up --authkey $AuthKey --unattended --hostname $Hostname '--accept-routes=false'
     if ($LASTEXITCODE -ne 0) { throw "tailscale up failed (exit $LASTEXITCODE). Key may be expired/consumed -- mint a fresh tag:client key." }
     Say "tailscale up OK."
 }
